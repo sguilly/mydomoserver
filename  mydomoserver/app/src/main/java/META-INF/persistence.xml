@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+    xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="JPA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    
+    <class>zibase.sensor.model.SensorValue</class>
+		<class>zibase.sensor.model.NameSensor</class>
+		<class>zibase.sensor.model.SensorEvent</class>
+		
+      <properties>  
+    <property name="eclipselink.jdbc.driver" value="org.hsqldb.jdbcDriver" />  
+    <property name="eclipselink.jdbc.url" value="jdbc:hsqldb:hsql://localhost/zibasestorage" />  
+    <property name="eclipselink.jdbc.user" value="sa" />  
+    <property name="eclipselink.jdbc.password" value="" />  
+    <property name="eclipselink.target-database" value="HSQL"/>  
+    <property name="eclipselink.logging.level" value="OFF"/>  
+    <property name="eclipselink.orm.throw.exceptions" value="true"/>  
+    <property name="eclipselink.ddl-generation" value="create-tables"/>  
+    <property name="eclipselink.ddl-generation.output-mode" value="both"/>  
+   
+ </properties>
+    </persistence-unit>
+</persistence>
