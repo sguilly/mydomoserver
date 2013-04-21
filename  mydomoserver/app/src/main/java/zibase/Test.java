@@ -2,10 +2,6 @@ package zibase;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -14,7 +10,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import zibase.dao.JpaSensorValueDao;
-import zibase.sensor.model.SensorType;
 import zibase.sensor.model.SensorValue;
 
 @Path("/test")
@@ -35,12 +30,12 @@ public class Test {
 
 
 		String filename = "bean-definition.xml";
+		@SuppressWarnings({ "unused", "resource" })
 		ApplicationContext context = new FileSystemXmlApplicationContext(filename);
 
 		JpaSensorValueDao jpa = new JpaSensorValueDao();
 		
-		
-
+				
 		List<SensorValue> resultsTemperature = jpa.findSensorValues("OS439208193");
 
 		for (SensorValue p : resultsTemperature) {

@@ -34,7 +34,7 @@ public class HyperSqlDbServerBean implements SmartLifecycle
  public void start()
  {
  
-/*
+
   if(server == null)
   {
    logger.info("Starting HSQL server...");
@@ -53,7 +53,7 @@ public class HyperSqlDbServerBean implements SmartLifecycle
    {
     logger.error("Error starting HSQL server.", e);
    }
-  }*/
+  }
  }
  
  @Override

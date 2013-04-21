@@ -102,6 +102,7 @@ public class UDPServerBean extends Thread implements ApplicationContextAware {
 			System.out.println("L=" + sendData.length + " > " + sendData[0]
 					+ sendData[1]);
 			
+			@SuppressWarnings("resource")
 			DatagramSocket serverSocket = new DatagramSocket(49999);
 
 			DatagramPacket sendPacket = new DatagramPacket(sendData,
