@@ -33,7 +33,7 @@ public class Test {
 		@SuppressWarnings({ "unused", "resource" })
 		ApplicationContext context = new FileSystemXmlApplicationContext(filename);
 
-		JpaSensorValueDao jpa = new JpaSensorValueDao();
+		JpaSensorValueDao jpa = context.getBean(JpaSensorValueDao.class);
 		
 				
 		List<SensorValue> resultsTemperature = jpa.findSensorValues("OS439208193");
