@@ -28,9 +28,9 @@ public class SensorEvent implements Serializable {
 	}
 	
 	
-	public SensorEvent(String idSensor, Date date, String value) {
+	public SensorEvent(String idSensor, String value) {
 		this.idSensor = idSensor;
-		this.date = date;
+		this.date = new Date();
 
 		this.value = value;
 

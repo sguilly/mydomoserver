@@ -12,25 +12,27 @@
 	<!-- ANNOTATIONS POUR LA CREATION DE BEANS -->
 	<context:component-scan base-package="zibase.dao" />
 
-
+<!-- 
 	<bean id="udplistener" class="zibase.protocol.UDPServerBean"
 		depends-on="decoder" init-method="start">
 		<property name="ipZibase" value="192.168.2.60" />
-		<property name="ipServer" value="192.168.2.17" />
+		<property name="ipServer" value="192.168.2.20" />
 
 	</bean>
+
 
 	<bean id="decoder" class="zibase.protocol.DecoderRadioPaquetBean"
 		depends-on="storageunit">
 
 	</bean>
+ -->
 
-	<bean id="storageunit" class="zibase.StorageUnitBean" depends-on="hsqldb"
+	<bean id="storageunit" class="zibase.StorageUnitBean" 
 		init-method="init">
 
 	</bean>
 
-	
+<!-- 	
 
 
 	<bean id="hsqldb" class="zibase.HyperSqlDbServerBean" init-method="start">
@@ -43,10 +45,14 @@
 			</value>
 		</constructor-arg>
 	</bean>
+-->
 
 	<bean id="rest" class="zibase.RestServerBean" init-method="start">
 		<property name="BASE_URI" value="http://localhost:9999/zibase/" />
 
+	</bean>
+	
+		<bean id="zibase" class="zibase.ZibaseBean" init-method="start">
 	</bean>
 
 

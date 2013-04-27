@@ -1,5 +1,6 @@
 package zibase.protocol;
 
+import java.math.BigInteger;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -114,11 +115,13 @@ public class UDPServerBean extends Thread implements ApplicationContextAware {
 			//for (int i = 0; i < 10; i++) 
 			for(;;)
 			{	System.out.println(">");
-				DatagramPacket receivePacket = new DatagramPacket(receiveData,
-						receiveData.length);
+			
+				DatagramPacket receivePacket = new DatagramPacket(receiveData,receiveData.length);
 				serverSocket.receive(receivePacket);
 				String modifiedSentence = new String(receivePacket.getData());
-				System.out.println("FROM SERVER:" + modifiedSentence);
+				System.out.println("FROM SERVER:" + modifiedSentence+"\n");
+				
+				System.out.println(String.format("%040x", new BigInteger(modifiedSentence.substring(70).getBytes(/*YOUR_CHARSET?*/))));
 				
 				decoderRadioPaquetBean.extraireBalise(modifiedSentence.substring(70));
 				

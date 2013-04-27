@@ -137,7 +137,7 @@ public class DecoderRadioPaquetBean implements ApplicationContextAware {
 					String idSensor = (String) cleValeur.get("id");
 
 					SensorEvent detector = new SensorEvent(idSensor,
-							new Date(), (String) cleValeur.get("flag1"));
+							(String) cleValeur.get("flag1"));
 
 					if (storageUnitBean.storeObject(detector) == false)
 						Log.info("DetectorEvent Store Fail");
